@@ -42,6 +42,8 @@ dependencies {
     implementation("org.jooq:jooq-meta:3.14.15")
     implementation("com.xiaoleilu:hutool-core:3.3.2")
     implementation ("org.projectlombok:lombok:1.18.24")
+// https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter
+    implementation("io.springfox:springfox-boot-starter:3.0.0")
 }
 
 tasks.register("JOOQ_Code_Generate") {
@@ -49,7 +51,7 @@ tasks.register("JOOQ_Code_Generate") {
         val config: org.jooq.meta.jaxb.Configuration = Configuration()
                 .withJdbc(Jdbc()
                         .withDriver("com.mysql.cj.jdbc.Driver")
-                        .withUrl("jdbc:mysql://192.168.10.120:3306/people?characterEncoding=utf-8&serverTimezone=Asia/Shanghai")
+                        .withUrl("jdbc:mysql://192.168.10.121:3306/people?characterEncoding=utf-8&serverTimezone=Asia/Shanghai")
                         .withUsername("root")
                         .withPassword("123456"))
                 .withGenerator(Generator()
